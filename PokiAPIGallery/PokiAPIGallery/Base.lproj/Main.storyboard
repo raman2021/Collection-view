@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9na-F2-3j3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PokeGallery-->
+        <scene sceneID="Ax1-FP-pdA">
+            <objects>
+                <viewController id="Jsi-fR-zDL" customClass="ViewController" customModule="PokiAPIGallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="trq-Ss-iNa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Sx9-Be-JYQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Mx-gO-cfw">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="wzr-Aq-cRM" customClass="ImageCollectionViewCell" customModule="PokiAPIGallery" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="od5-Z7-hst">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ytd-nf-XGp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ytd-nf-XGp" firstAttribute="top" secondItem="od5-Z7-hst" secondAttribute="top" id="HWr-8V-uVV"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ytd-nf-XGp" secondAttribute="bottom" id="WJK-wL-Bhb"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ytd-nf-XGp" secondAttribute="trailing" id="gQX-5D-YJ0"/>
+                                                <constraint firstItem="Ytd-nf-XGp" firstAttribute="leading" secondItem="od5-Z7-hst" secondAttribute="leading" id="idD-Dw-1RO"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="Image" destination="od5-Z7-hst" id="uRb-X6-hNg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MB6-5U-Nq1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Sx9-Be-JYQ" firstAttribute="leading" secondItem="MB6-5U-Nq1" secondAttribute="leading" id="AXc-BA-2AS"/>
+                            <constraint firstItem="MB6-5U-Nq1" firstAttribute="bottom" secondItem="Sx9-Be-JYQ" secondAttribute="bottom" id="BRY-bq-KfS"/>
+                            <constraint firstItem="Sx9-Be-JYQ" firstAttribute="top" secondItem="MB6-5U-Nq1" secondAttribute="top" id="K1n-n9-Ace"/>
+                            <constraint firstItem="Sx9-Be-JYQ" firstAttribute="trailing" secondItem="MB6-5U-Nq1" secondAttribute="trailing" id="pXA-DZ-mbN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="PokeGallery" id="ofE-Pd-uBv"/>
+                    <connections>
+                        <outlet property="ImageCollectionView" destination="Sx9-Be-JYQ" id="dtF-qF-uvW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TFL-0L-ibr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023.1884057971015" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VjA-nY-twf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9na-F2-3j3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="zGo-7e-puW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jsi-fR-zDL" kind="relationship" relationship="rootViewController" id="NsP-jR-ZZE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6N-Xg-t0Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113.04347826086958" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
